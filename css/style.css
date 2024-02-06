@@ -62,7 +62,13 @@ body {
 }
 
 .page-information{
-    padding: 0 25px;
+    padding: 100px 25px 40px 25px;
+}
+
+#reset-btn{
+    position: absolute;
+    top: 100px;
+    right: 25px;
 }
 
 .gallery {
