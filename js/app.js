@@ -20,13 +20,16 @@ document.addEventListener("DOMContentLoaded", function() {
     catImages.forEach((imageUrl, index) => {
         const card = document.createElement("div");
         card.classList.add("card");
-        card.innerHTML = `
+
+        const imgContainer = document.createElement("div");
+        imgContainer.classList.add("img-container");
+        imgContainer.innerHTML = `
             <img src="${imageUrl}" alt="Cat ${index + 1}">
             <button class="favorite-btn" data-favorite="false">&#9825;</button>
         `;
-        gallery.appendChild(card);
+        card.appendChild(imgContainer);
 
-        const favoriteBtn = card.querySelector(".favorite-btn");
+        const favoriteBtn = imgContainer.querySelector(".favorite-btn");
         favoriteBtn.addEventListener("click", () => {
             const isFavorited = favoriteBtn.dataset.favorite === "true";
             if (isFavorited) {
@@ -40,10 +43,20 @@ document.addEventListener("DOMContentLoaded", function() {
             }
             favCountSpan.textContent = favCount;
         });
-    });
 
-    // Reset button functionality
-    resetBtn.addEventListener("click", () => {
+        const infoContainer = document.createElement("div");
+        infoContainer.classList.add("info");
+        infoContainer.innerHTML = `
+            <h2>Cat ${index + 1}</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        `;
+        card.appendChild(infoContainer);
+
+        gallery.appendChild(card);
+    });
+    
+     // Reset button functionality
+     resetBtn.addEventListener("click", () => {
         const favoriteBtns = document.querySelectorAll(".favorite-btn");
         favoriteBtns.forEach(btn => {
             btn.dataset.favorite = "false";
