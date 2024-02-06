@@ -30,15 +30,21 @@ document.addEventListener("DOMContentLoaded", function() {
         card.appendChild(imgContainer);
 
         const favoriteBtn = imgContainer.querySelector(".favorite-btn");
+        favoriteBtn.style.fontSize = "30px";
+        favoriteBtn.style.top = "30px";
         favoriteBtn.addEventListener("click", () => {
             const isFavorited = favoriteBtn.dataset.favorite === "true";
             if (isFavorited) {
                 favoriteBtn.dataset.favorite = "false";
                 favoriteBtn.innerHTML = "&#9825;";
+                favoriteBtn.style.fontSize = "30px";
+                favoriteBtn.style.top = "30px";
                 favCount--;
             } else {
                 favoriteBtn.dataset.favorite = "true";
                 favoriteBtn.innerHTML = "&#9829;";
+                favoriteBtn.style.fontSize = "50px";
+                favoriteBtn.style.top = "22px";
                 favCount++;
             }
             favCountSpan.textContent = favCount;
@@ -54,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         gallery.appendChild(card);
     });
-    
+
      // Reset button functionality
      resetBtn.addEventListener("click", () => {
         const favoriteBtns = document.querySelectorAll(".favorite-btn");

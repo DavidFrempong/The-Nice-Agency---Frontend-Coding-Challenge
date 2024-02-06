@@ -69,6 +69,18 @@ body {
     position: absolute;
     top: 100px;
     right: 25px;
+    background-color: white;
+    border: 0.7px solid black;
+    border-radius: 2px;
+    color: black; /* Add this line to ensure text color is visible */
+    padding: 12px 25px; /* Add padding for better appearance */
+    cursor: pointer;
+    outline: none;
+    font-weight: 700;
+}
+
+#reset-btn:hover {
+    background-color: #f2f2f2; /* Add a hover effect */
 }
 
 .gallery {
@@ -82,21 +94,32 @@ body {
     border-radius: 5px;
     overflow: hidden;
     position: relative;
+    background-color: #ffffff;
+    padding: 25px 10px;
 }
 
 .card img {
     width: 100%;
-    height: auto;
+    margin: 0 auto;
+    height: 150px;
+    object-fit: cover;
+}
+
+.img-container{
+    width: 90%;
+    margin: 0 auto;
 }
 
 .favorite-btn {
     position: absolute;
-        top: 10px;
-        right: 10px;
-        background-color: transparent;
+        top: 20px;
+        right: 40px;
+        font-size: 50px;
+        background: transparent;
         border: none;
         cursor: pointer;
         outline: none;
+        color: #e0e0e0;
 }
 
 .counter {
