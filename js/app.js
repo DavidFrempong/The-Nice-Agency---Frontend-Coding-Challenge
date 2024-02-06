@@ -31,20 +31,20 @@ document.addEventListener("DOMContentLoaded", function() {
 
         const favoriteBtn = imgContainer.querySelector(".favorite-btn");
         favoriteBtn.style.fontSize = "30px";
-        favoriteBtn.style.top = "30px";
+        favoriteBtn.style.top = "25px";
         favoriteBtn.addEventListener("click", () => {
             const isFavorited = favoriteBtn.dataset.favorite === "true";
             if (isFavorited) {
                 favoriteBtn.dataset.favorite = "false";
                 favoriteBtn.innerHTML = "&#9825;";
                 favoriteBtn.style.fontSize = "30px";
-                favoriteBtn.style.top = "30px";
+                favoriteBtn.style.top = "25px";
                 favCount--;
             } else {
                 favoriteBtn.dataset.favorite = "true";
                 favoriteBtn.innerHTML = "&#9829;";
-                favoriteBtn.style.fontSize = "50px";
-                favoriteBtn.style.top = "22px";
+                favoriteBtn.style.fontSize = "45px";
+                favoriteBtn.style.top = "20px";
                 favCount++;
             }
             favCountSpan.textContent = favCount;
